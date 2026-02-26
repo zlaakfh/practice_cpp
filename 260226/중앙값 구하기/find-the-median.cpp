@@ -9,8 +9,17 @@ int main() {
     if ((a > b) && (a < c)) {
         cout << a;
     }
+    else if ((a > c) && (a < b)) {
+        cout << a;
+    }
     else if ((a < b) && (b < c)) {
         cout << b;
+    }
+    else if ((a < c) && (b < a)) {
+        cout << b;
+    }
+    else if ((c > a) && (c < b)) {
+        cout << c;
     }
     else {
         cout << c;
