@@ -2,26 +2,19 @@
 #include <string>
 using namespace std;
 
-int IsSubArray(string a, string b) {
-    for (int i = 0; i <= a.length() - b.length(); i++) {
-        bool match = true;
-        for (int j = 0; j < b.length(); j++) {
-            if (a[i + j] != b[j]) {
-                match = false;
-                break;
-            }
-        }
-        if (match) return i;
-    }
-    return -1;
+int FindIdx(string s, string target) {
+    int idx = s.find(target);
+    if (idx == string::npos) return -1;
+    return idx;
 }
 
-int main() {
-    string n, m;
-    cin >> n;
-    cin >> m;
 
-    cout << IsSubArray(n, m);
+int main() {
+    string s, target;
+    cin >> s;
+    cin >> target;
+
+    cout << FindIdx(s, target);
 
     return 0;
 }
