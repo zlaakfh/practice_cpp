@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <iomanip>
 using namespace std;
 
 class Person {
@@ -23,7 +24,7 @@ int main() {
 
     cout << "name" << endl;
     for (int i = 0; i < 5; i++) {
-        cout << p[i].name << " " << p[i].h <<  " " << p[i].w << endl;
+        cout << p[i].name << " " << p[i].h <<  " " << fixed << setprecision(1) << p[i].w << endl;
     }
 
     sort(p, p + 5, [](Person a, Person b) {
@@ -33,7 +34,7 @@ int main() {
     cout << endl;
     cout << "height" << endl;
     for (int i = 0; i < 5; i++) {
-        cout << p[i].name << " " << p[i].h <<  " " << p[i].w << endl;
+        cout << p[i].name << " " << p[i].h <<  " " << fixed << setprecision(1) << p[i].w << endl;
     }
 
     return 0;
