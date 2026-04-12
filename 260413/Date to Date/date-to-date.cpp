@@ -5,23 +5,16 @@ int main() {
     int m1, d1, m2, d2;
     cin >> m1 >> d1 >> m2 >> d2;
     
-    int day = 1;
     int arr[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    while (true) {
-        if (m1 == m2 && d1 == d2) {
-            break;
+    auto toDays = [&](int m, int d) {
+        int total = 0;
+        for (int i = 1; i < m; i++) { // 이전 달까지의 합산
+            total += arr[i];
         }
+        return total + d; // 이전 달까지의 합산 + 이번 달 일 수
+    };
 
-        d1++;
-        day++;
-
-        if (d1 > arr[m1]) {
-            d1 = 1;
-            m1++;
-        }
-    }
-
-    cout << day;
+    cout << toDays(m2, d2) - toDays(m1, d1) + 1; 
     return 0;
 }
