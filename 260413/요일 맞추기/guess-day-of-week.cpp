@@ -16,17 +16,10 @@ int main() {
         return total + d;
     };
 
-    int time = toDays(m2, d2) - toDays(m1, d1);
+    int diff = toDays(m2, d2) - toDays(m1, d1);
+    int idx = ((diff % 7) + 7) % 7;
 
-    if (time < 0) {
-        time += 7;
-        cout << week[time % 7];
-    }
-    else {
-        cout << week[time % 7];
-    }
-
-    
+    cout << week[idx];
     
     return 0;
 }
