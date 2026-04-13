@@ -11,9 +11,9 @@ int main() {
 
     int time = 0;
 
-    if (d2 < d1 || h2 < h1 || m2 < m1) {
-        time = -1;
-    }
+    if (d2 < d1) time = -1;
+    else if (d2 == d1 && h2 < h1) time = -1;
+    else if (d2 == d1 && h2 == h1 && m2 < m1) time = -1;
 
     else {
         while (true) {
