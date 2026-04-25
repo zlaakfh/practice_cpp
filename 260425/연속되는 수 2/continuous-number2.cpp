@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    int arr[n] = {0};
+    int arr[1000];
     
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
@@ -17,6 +17,9 @@ int main() {
         if (arr[i] == arr[i - 1]) {
             cnt++;
         }
+        else {
+            cnt = 1;
+        }
             
         if (cnt > maxcnt) {
             maxcnt = cnt;
@@ -24,6 +27,6 @@ int main() {
             
     }
     cout << maxcnt;
-    
+
     return 0;
 }
