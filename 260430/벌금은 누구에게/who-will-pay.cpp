@@ -11,13 +11,13 @@ int main() {
         int num;
         cin >> num;
         arr[num-1]++;
-        if (arr[num-1] >= 3) {
+        if (arr[num-1] >= k) {
             ans = num;
             break;
         }
     }
 
     cout << ans;
-    
+
     return 0;
 }
